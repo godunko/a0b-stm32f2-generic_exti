@@ -1,0 +1,35 @@
+--
+--  Copyright (C) 2025, Vadim Godunko <vgodunko@gmail.com>
+--
+--  SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+--
+
+with "../config/a0b_stm32f2_generic_exti_config.gpr";
+
+with "../config/a0b_base_config.gpr";
+with "a0b_common.gpr";
+
+library project A0B_STM32F2_Generic_EXTI is
+
+   for Library_Name use "a0b_stm32f2_exti";
+   for Library_Dir use "../.libs/" & A0B_Common.Library_Dir_Suffix;
+   for Object_Dir use "../.objs/" & A0B_Common.Object_Dir_Suffix;
+   for Source_Dirs use ("../source");
+
+   package Naming is
+      case A0B_Base_Config.Tasking is
+         when "none" | "a0b" =>
+            for Implementation ("A0B.STM32.Generic_GPIO.Generic_EXTI.Generic_Interrupts")
+              use "a0b-stm32-generic_gpio-generic_exti-generic_interrupts__none.adb";
+
+         when "ada" =>
+            for Implementation ("A0B.STM32.Generic_GPIO.Generic_EXTI.Generic_Interrupts")
+              use "a0b-stm32-generic_gpio-generic_exti-generic_interrupts__ada.adb";
+      end case;
+   end Naming;
+
+   package Compiler is
+      for Switches ("Ada") use A0B_Common.Compiler_Switches_Ada;
+   end Compiler;
+
+end A0B_STM32F2_Generic_EXTI;
