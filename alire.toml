@@ -7,7 +7,7 @@ authors = ["Vadim Godunko"]
 maintainers = ["Vadim Godunko <vgodunko@gmail.com>"]
 maintainers-logins = ["godunko"]
 licenses = "Apache-2.0 WITH LLVM-exception"
-tags = ["a0b", "embedded"]
+tags = ["a0b", "embedded", "stm32", "exti"]
 
 project-files = ["gnat/a0b_stm32f2_generic_exti.gpr"]
 
