@@ -2,6 +2,7 @@ name = "a0b_stm32f2_generic_exti"
 description = "A0B: STM32F2+ Generic EXTI"
 version = "0.1.0-dev"
 
+website = "https://github.com/godunko/a0b-stm32f2-generic_exti"
 authors = ["Vadim Godunko"]
 maintainers = ["Vadim Godunko <vgodunko@gmail.com>"]
 maintainers-logins = ["godunko"]
